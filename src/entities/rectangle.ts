@@ -1,6 +1,7 @@
 import { Shape } from "./shape";
 import { Point } from "./point";
 import { RectangleService } from '../services/RectangleService';
+import { Warehouse } from "../warehouse/warehouse";
 
 export class Rectangle extends Shape {
     constructor(
@@ -10,7 +11,10 @@ export class Rectangle extends Shape {
         public p3: Point,
         public p4: Point,
     ){
-        super(id)
+        super(id);
+        const wh = Warehouse.getInstance();
+        this.attach(wh.setMetrics.bind(wh));
+        wh.setMetrics(this);
     }
 
     area(): number {
@@ -18,5 +22,9 @@ export class Rectangle extends Shape {
   }
   perimetr(): number {
     return RectangleService.perimeter(this);
+  }
+
+  getPoints(): Point[] {
+    return [this.p1, this.p2, this.p3, this.p4];
   }
 }
