@@ -1,0 +1,12 @@
+
+r1 rectangle 0 0   4 0   4 3   0 3 
+r2 rectangle 1 1   5 1   5 4   1 4    
+r3 rectangle 0 0   2 0   2 2   0 2    
+
+# CONES
+c1 cone  0 0  3  5    
+c2 cone  1.5 -2  2.5 10  
+c3 cone  0 0  -1 4   
+
+bad1 rectangle 0 0 1 1       
+bad2 cone 0 0 foo 5          
